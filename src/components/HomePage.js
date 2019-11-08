@@ -44,7 +44,7 @@ class HomePage extends Component {
           </div>
         </nav>
         <div className="splash">
-          <SearchForm />
+          {/* <SearchForm /> */}
           {/* <img className='splash' src={require('../img/splash.jpg')} /> */}
         </div>
         < HomeInfo />
