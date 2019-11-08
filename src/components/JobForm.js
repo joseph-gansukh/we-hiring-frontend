@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-const API = 'http://localhost:3000/jobs/'
+// const API = 'http://localhost:3000/jobs/'
 
 class JobForm extends Component {
 
@@ -14,9 +14,7 @@ class JobForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
-
-    const newJob = {name: this.state.title, location: this.state.description, employer_id: 1}
+    const newJob = {title: this.state.title, description: this.state.description, employer_id: 1}
     
     const reqObj = {
       method: "POST",
@@ -28,15 +26,18 @@ class JobForm extends Component {
       })
     }
 
-    fetch(API, reqObj)
+    fetch('http://localhost:3000/jobs/', reqObj)
     .then(resp => resp.json())
-    .then(data => console.log(data))
+    .then(data => console.log('hi'))
 
     this.setState({
       title: '', 
       description: '',
       employer_id: 1
     })
+
+    this.props.history.push('/jobs')
+
   }
 
   handleChange = (e) => {

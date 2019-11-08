@@ -37,9 +37,9 @@ export default class Navbar extends Component {
           {/* <form className="form-inline my-2 my-lg-0">
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/> 
         </form> */}
-          <Link to="/jobs" onClick={this.handleJobClick} className="btn btn-outline-success my-2 my-sm-0">Jobs</Link>
-          <Link to="/newApplicant" onClick={this.handleNewApplicant} className="btn btn-outline-success my-2 my-sm-0">New Applicant</Link>
-          <Link to="/newJob" onClick={this.handleNewJob} className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>
+          <Link to="/jobs" className="btn btn-outline-success my-2 my-sm-0">Jobs</Link>
+          <Link to="/newApplicant" className="btn btn-outline-success my-2 my-sm-0">New Applicant</Link>
+          <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>
           <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
         </div>
       </nav>
