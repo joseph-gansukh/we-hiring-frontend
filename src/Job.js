@@ -24,7 +24,7 @@ class Job extends Component {
     })
 
     return (
-      <div>
+      <div className='jobs-container'>
         {jobs}
       </div>
     )
