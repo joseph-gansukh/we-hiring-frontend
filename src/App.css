@@ -23,3 +23,14 @@
   margin-left: 50px 50px;
 }
 
+.card {
+  width: 15rem;
+  margin: 10px;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../App.css';
 import SearchForm from './SearchForm'
+import HomeInfo from './HomeInfo'
 
 class HomePage extends Component {
 
@@ -46,6 +47,7 @@ class HomePage extends Component {
           <SearchForm />
           {/* <img className='splash' src={require('../img/splash.jpg')} /> */}
         </div>
+        < HomeInfo />
       </div>
     )
 
