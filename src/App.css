@@ -24,7 +24,6 @@
   width: 60vw;
   border-radius: 5px;
   padding: 2%;
-
 }
 
 .info-section {
@@ -44,5 +43,15 @@
 
 .card-text {
   font-size: .9rem;
+}
+
+
+#job-cards {
+  display: flex;
+  justify-content: center;
+}
+
+#job-card {
+  width: 80vw;
 }
 

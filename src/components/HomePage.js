@@ -15,6 +15,7 @@ class HomePage extends Component {
     console.log('click')
   }
 
+
   render() {
     return (
       <div>
