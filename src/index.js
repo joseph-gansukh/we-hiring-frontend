@@ -21,7 +21,9 @@ const routing = (
         <Route exact path="/" component={HomePage} />
         <Route exact path="/jobs" component={Job} />
         <Route exact path="/newApplicant" component={ApplicantForm} />
-        <Route exact path="/newJob" component={JobForm} />
+        <Route exact path="/newJob" render={routerParams => 
+          <JobForm {...routerParams} /> }/>
+        
       </div>
     </Router>
 )
