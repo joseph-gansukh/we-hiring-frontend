@@ -9,6 +9,8 @@ import JobsIndex from './components/JobsIndex';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Job from './Job'
+import ApplicantForm from './components/ApplicantForm'
+import JobForm from './components/JobForm'
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -18,6 +20,8 @@ const routing = (
         <Navbar/>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/jobs" component={Job} />
+        <Route exact path="/newApplicant" component={ApplicantForm} />
+        <Route exact path="/newJob" component={JobForm} />
       </div>
     </Router>
 )
