@@ -20,6 +20,7 @@ class Job extends Component {
     console.log("this.state.jobs", this.state.jobs)
 
     const jobs = this.state.jobs.map(job => {
+      //sends props to JobsIndex
       return <JobsIndex job={job} />
     })
 

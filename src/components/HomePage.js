@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import '../App.css';
 import SearchForm from './SearchForm';
 import HomeInfo from './HomeInfo';
-import Navbar from './Navbar'
-import JobsIndex from './JobsIndex'
-import Job from '../Job'
 
 const API = 'http://localhost:3000/jobs'
 
