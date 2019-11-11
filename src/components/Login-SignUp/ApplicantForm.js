@@ -46,6 +46,7 @@ class ApplicantForm extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
+        <h1>New Applicant Form</h1>
         <Label>Applicant Name</Label>
         <Input required type="text" name="name" id="name" onChange={this.handleChange} value={this.state.name}/>
         <Label>Location</Label>

@@ -9,8 +9,10 @@ import JobsIndex from './components/JobsIndex';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Job from './Job'
-import ApplicantForm from './components/ApplicantForm'
+import ApplicantForm from './components/Login-SignUp/ApplicantForm'
 import JobForm from './components/JobForm'
+import ApplicantLoginForm from './components/Login-SignUp/ApplicantLoginForm'
+import EmployerLoginForm from './components/Login-SignUp/EmployerLoginForm'
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -21,9 +23,9 @@ const routing = (
         <Route exact path="/" component={HomePage} />
         <Route exact path="/jobs" component={Job} />
         <Route exact path="/newApplicant" component={ApplicantForm} />
-        <Route exact path="/newJob" render={routerParams => 
-          <JobForm {...routerParams} /> }/>
-        
+        <Route exact path="/newJob" render={routerParams => <JobForm {...routerParams} /> }/>
+        <Route exact path="/applicantLoginForm" render={ routerParams => <ApplicantLoginForm {...routerParams} /> } />
+        <Route exact path="/employerLoginForm" render={ routerParams => <EmployerLoginForm {...routerParams} /> } />
       </div>
     </Router>
 )

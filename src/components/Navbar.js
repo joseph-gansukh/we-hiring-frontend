@@ -38,9 +38,10 @@ export default class Navbar extends Component {
             <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/> 
         </form> */}
           <Link to="/jobs" className="btn btn-outline-success my-2 my-sm-0">Jobs</Link>
-          <Link to="/newApplicant" className="btn btn-outline-success my-2 my-sm-0">New Applicant</Link>
           <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>
-          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+          <Link to="/applicantLoginForm" className="btn btn-outline-success my-2 my-sm-0">Sign In</Link>
+          <Link to="/employerLoginForm" className="btn btn-outline-success my-2 my-sm-0">Employers / Post Job</Link>
+          {/* <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button> */}
         </div>
       </nav>
     )
