@@ -2,10 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
-import App from './App';
 import HomePage from './components/HomePage'
 import Navbar from './components/Navbar'
-import JobsIndex from './components/JobsIndex';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Job from './Job'
@@ -13,6 +11,7 @@ import ApplicantForm from './components/Login-SignUp/ApplicantForm'
 import JobForm from './components/JobForm'
 import ApplicantLoginForm from './components/Login-SignUp/ApplicantLoginForm'
 import EmployerLoginForm from './components/Login-SignUp/EmployerLoginForm'
+import JobApplications from './components/JobApplications'
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -22,6 +21,7 @@ const routing = (
         <Navbar/>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/jobs" component={Job} />
+        <Route exact path="/yourJobs" render={routerParams => <JobApplications {...routerParams} /> } />
         <Route exact path="/newApplicant" component={ApplicantForm} />
         <Route exact path="/newJob" render={routerParams => <JobForm {...routerParams} /> }/>
         <Route exact path="/applicantLoginForm" render={ routerParams => <ApplicantLoginForm {...routerParams} /> } />

@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Navbar from './Navbar'
-
 
 export default class JobsIndex extends Component {
     constructor(props) {
@@ -8,10 +6,6 @@ export default class JobsIndex extends Component {
     }
 
     render() {
-        // const jobsData = this.props.jobs.map(job => {
-        //     return job
-        // })
-        console.log('JobsIndex',this.props.job)
 
         return(
             <div>
