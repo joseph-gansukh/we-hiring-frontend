@@ -12,6 +12,7 @@ import JobForm from './components/JobForm'
 import ApplicantLoginForm from './components/Login-SignUp/ApplicantLoginForm'
 import EmployerLoginForm from './components/Login-SignUp/EmployerLoginForm'
 import JobApplications from './components/JobApplications'
+import EmployerPage from './components/Login-SignUp/EmployerPage';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -26,6 +27,7 @@ const routing = (
         <Route exact path="/newJob" render={routerParams => <JobForm {...routerParams} /> }/>
         <Route exact path="/applicantLoginForm" render={ routerParams => <ApplicantLoginForm {...routerParams} /> } />
         <Route exact path="/employerLoginForm" render={ routerParams => <EmployerLoginForm {...routerParams} /> } />
+        <Route exact path="/employerPage" render={ routerParams => < EmployerPage {...routerParams}/>}/>
       </div>
     </Router>
 )
