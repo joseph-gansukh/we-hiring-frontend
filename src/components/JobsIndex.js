@@ -6,7 +6,7 @@ export default class JobsIndex extends Component {
     }
 
     render() {
-
+        console.log(this.props)
         return(
             <div>
                 <div className="ui cards" id="job-cards">
