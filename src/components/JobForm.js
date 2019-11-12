@@ -7,6 +7,7 @@ class JobForm extends Component {
 
   state = {
     title: '',
+    field: '',
     description: '',
     employer_id: 1
   }
@@ -14,7 +15,7 @@ class JobForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const newJob = {title: this.state.title, description: this.state.description, employer_id: 1}
+    const newJob = {title: this.state.title, field: this.state.field, description: this.state.description, employer_id: 1}
     
     const reqObj = {
       method: "POST",
@@ -32,6 +33,7 @@ class JobForm extends Component {
 
     this.setState({
       title: '', 
+      field: '',
       description: '',
       employer_id: 1
     })
@@ -51,6 +53,8 @@ class JobForm extends Component {
       <Form onSubmit={this.handleSubmit}>
         <Label>Job Title</Label>
         <Input required type="text" name="title" id="title" onChange={this.handleChange} value={this.state.title}/>
+        <Label>Field</Label>
+        <Input required type="text" name="field" id="field" onChange={this.handleChange} value={this.state.field}/>
         <Label>Description</Label>
         <Input required type="text" name="description" id="description" onChange={this.handleChange} value={this.state.description}/>
       <Button>Submit</Button>

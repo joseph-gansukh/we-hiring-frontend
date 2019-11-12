@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 
 class SearchForm extends Component {
+ 
   render() {
 
     return(
@@ -11,9 +12,9 @@ class SearchForm extends Component {
             <label>Job Search</label>
             <div className="form-inputs">
             <label>Field</label>
-            <input type="text" name="field"/>
+            <input type="text" name="field" onChange={this.handleChange}/>
             <label>Location</label>
-            <input type="text" name="location"/>
+            <input type="text" name="location" onChange={this.handleChange}/>
             <label>Pay</label>
             <input type="text" name="pay"/>
             
