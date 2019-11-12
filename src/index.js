@@ -13,6 +13,8 @@ import ApplicantLoginForm from './components/Login-SignUp/ApplicantLoginForm'
 import EmployerLoginForm from './components/Login-SignUp/EmployerLoginForm'
 import JobApplications from './components/JobApplications'
 import EmployerPage from './components/Login-SignUp/EmployerPage';
+import EmployerForm from './components/Login-SignUp/EmployerForm'
+import SearchResults from './components/SearchResults'
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -24,10 +26,12 @@ const routing = (
         <Route exact path="/jobs" component={Job} />
         <Route exact path="/yourJobs" render={routerParams => <JobApplications {...routerParams} /> } />
         <Route exact path="/newApplicant" component={ApplicantForm} />
+        <Route exact path="/newEmployer" component={EmployerForm} />
         <Route exact path="/newJob" render={routerParams => <JobForm {...routerParams} /> }/>
         <Route exact path="/applicantLoginForm" render={ routerParams => <ApplicantLoginForm {...routerParams} /> } />
         <Route exact path="/employerLoginForm" render={ routerParams => <EmployerLoginForm {...routerParams} /> } />
         <Route exact path="/employerPage" render={ routerParams => < EmployerPage {...routerParams}/>}/>
+        <Route exact path="/searchResults" render={ routerParams => < SearchResults {...routerParams}/>}/>
       </div>
     </Router>
 )
