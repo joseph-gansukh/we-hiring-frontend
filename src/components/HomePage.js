@@ -2,26 +2,45 @@ import React, { Component } from 'react';
 import '../App.css';
 import SearchForm from './SearchForm';
 import HomeInfo from './HomeInfo';
+import JobsIndex from './JobsIndex'
+import SearchResults from './SearchResults'
 
 const API = 'http://localhost:3000/jobs'
 
-
 class HomePage extends Component {
 
-  handleJobclick = () => {
-    console.log('click')
+  state = {
+    jobs: []
   }
 
+  async componentDidMount() {
+    let resp = await fetch(API)
+    let jobs = await resp.json()
+    this.setState({
+      jobs
+    })
+  }
 
+  handleSearch = (filter) => {
+    const allJobs = this.state.jobs.slice()
+    const filteredJobs = allJobs.filter(job => {
+      return job.employer.location.toLowerCase() === filter.location.toLowerCase()
+    })
+  
+    this.props.history.push({pathname: '/searchResults', state: {filteredJobs: filteredJobs}})
+    // return <SearchResults filteredJobs={this.state.filteredJobs}/>
+  }
+  
+  
+  
   render() {
+    console.log('filteredJobs from HomePage', this.state.filteredJobs)
     return (
       <div>
         <div className="splash">
-          <SearchForm />
-          {/* <img className='splash' src={require('../img/splash.jpg')} /> */}
+          <SearchForm jobs={this.state.jobs} handleSearch={this.handleSearch} filteredJobs={this.state.filteredJobs}/>
         </div>
         < HomeInfo />
-        {/* <JobsIndex jobs={this.state.jobs} test={"test prop"} /> */}
       </div>
     )
 
