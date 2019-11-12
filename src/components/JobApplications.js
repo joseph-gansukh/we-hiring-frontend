@@ -11,6 +11,7 @@ const JobApplications = (props) => {
                         <div className="content">
                             <div className="header">Job Title: {job.title} </div>
                             <div className="meta">Company: {job.employer.name}</div>
+                            <div className="meta">Field: {job.field}</div>
                             <div className="description">Job Description: {job.description} </div>
                         </div>
                     </div>

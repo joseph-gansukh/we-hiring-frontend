@@ -3,7 +3,6 @@ import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 
 class SearchForm extends Component {
- 
   constructor(props) {
     super(props)
     this.state = {
@@ -18,6 +17,7 @@ class SearchForm extends Component {
     })
   }
 
+
   handleSubmit = (e) => {
     e.preventDefault()
     this.props.handleSearch(this.state)
@@ -31,12 +31,10 @@ class SearchForm extends Component {
           <form onSubmit={this.handleSubmit}>
             <label>Job Search</label>
             <div className="form-inputs">
-
             <select name="field" onChange={this.handleChange}>
               <option value="tech">Tech</option>
               <option value="legal">Legal</option>
             </select>
-
             <label>Location</label>
             <input type="text" name="location" onChange={this.handleChange}/>
             <label>Pay</label>
