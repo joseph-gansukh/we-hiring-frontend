@@ -35,8 +35,8 @@ class EmployerLoginForm extends Component {
         <Form onSubmit={this.handleSubmit}>
         <Label>Name</Label>
         <Input required type="text" name="name" id="name" onChange={this.handleChange}/>
-        {/* <Label>Password</Label>
-        <Input required type="text" name="location" id="location" onChange={this.handleChange} value={this.state.location}/> */}
+        <Label>Password</Label>
+        <Input required type="text" name="location" id="location" onChange={this.handleChange} value={this.state.location}/>
         <Button>Submit</Button>
         </Form>
         <br></br>
