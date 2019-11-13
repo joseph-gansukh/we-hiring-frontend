@@ -26,10 +26,10 @@ class App extends React.Component {
   }
 
   handleLogin = (user) => {
-    console.log('logged in user', user)
     this.setState({
       auth: user
     })
+    console.log('handle login', this.state.auth)
   }
 
   handleLogout = () => {
@@ -37,12 +37,16 @@ class App extends React.Component {
       auth: {}
     })
     localStorage.removeItem('token')
-    console.log("HANDLE LOGOUT IT CALLED")
+  }
+
+  updateAuth = (user) => {
+    this.setState({
+      auth: user.applicant
+    })
+    console.log('update auth', this.state.auth)
   }
   
   render() {
-    console.log("STATE IN APP JS AFTER LOGOUT IS CALLED", this.state)
-    console.log("TYPE PLEASE BE RIGHT", this.state.auth)
     return (
       <div className="App">
         <header className="App-header">
@@ -51,8 +55,8 @@ class App extends React.Component {
     <div>
       <Route exact path="/" component={HomePage} />
       {/* <Route exact path="/jobs" component={Job} user={this.state.auth} handleLogout={this.handleLogout}/> */}
-      <Route exact path="/jobs" render={ routerParams => <Job {...routerParams} handleLogin={this.handleLogin} user={this.state.auth}/> }/>
-      {/* <Route exact path="/yourJobs" render={routerParams => <JobApplications {...routerParams} /> } /> */}
+      <Route exact path="/jobs" render={ routerParams => <Job {...routerParams} handleLogin={this.handleLogin} updateAuth={this.updateAuth} user={this.state.auth}/> }/>
+      <Route exact path="/yourJobs" render={routerParams => <JobApplications {...routerParams} user={this.state.auth}/> } />
       <Route exact path="/newApplicant" component={ApplicantForm} />
       <Route exact path="/newEmployer" component={EmployerForm} />
       <Route exact path="/newJob" render={routerParams => <JobForm {...routerParams} user={this.state.auth}/> }/>

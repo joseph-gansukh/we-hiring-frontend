@@ -37,7 +37,6 @@ class EmployerForm extends React.Component {
     fetch(API, reqObj)
     .then(resp => resp.json())
     .then(data => {
-      console.log('data', data)
       localStorage.setItem('token', data.jwt)
     })
 

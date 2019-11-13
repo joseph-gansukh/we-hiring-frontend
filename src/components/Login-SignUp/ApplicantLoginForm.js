@@ -11,7 +11,7 @@ class ApplicantLoginForm extends Component {
     isLoggedIn: false,
     applicant: {},
     applicantUser: false,
-    userType: 'applicant'
+    usertype: 'applicant'
   }
 
   handleSubmit = async (e) => {
@@ -25,7 +25,6 @@ class ApplicantLoginForm extends Component {
    }
     let resp = await fetch(API, reqObj)
     let data = await resp.json()
-    console.log("data", data)
     localStorage.setItem('token',data.token)
     this.setState({
       applicant: data.banana,
@@ -43,7 +42,6 @@ class ApplicantLoginForm extends Component {
   }
   
   render() {
-    console.log("IS THIS BANANA GOT TYPE????????", this.state.applicant)
     return(
       <div>
         <h1>Applicant Login page</h1>  

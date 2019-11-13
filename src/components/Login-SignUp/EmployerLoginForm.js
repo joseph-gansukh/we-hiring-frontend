@@ -11,7 +11,7 @@ class EmployerLoginForm extends Component {
     password: '',
     isLoggedIn: false,
     employer: {},
-    userType: 'employer'
+    usertype: 'employer'
   }
 
   handleSubmit = async (e) => {

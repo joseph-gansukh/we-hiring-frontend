@@ -34,7 +34,6 @@ class HomePage extends Component {
   
   
   render() {
-    console.log('filteredJobs from HomePage', this.state.filteredJobs)
     return (
       <div>
         <div className="splash">

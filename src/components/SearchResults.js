@@ -12,8 +12,7 @@ class SearchResult extends React.Component {
       return <JobsIndex job={job}/>
     })
 
-    console.log('jobs', jobs)
-    console.log("RESULTS PROPS",this.props)
+
     return(
       <div>
         {jobs}

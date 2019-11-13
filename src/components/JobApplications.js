@@ -1,7 +1,8 @@
 import React from 'react'
 
 const JobApplications = (props) => {
-    let applicantProps = props.location.state.applicant.jobs
+    console.log(props)
+    let applicantProps = props.user.jobs
     console.log(applicantProps)
     let applicantData = applicantProps.map(job => {
         return(
