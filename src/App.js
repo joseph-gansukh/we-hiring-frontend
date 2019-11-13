@@ -49,7 +49,8 @@ class App extends React.Component {
 
     <div>
       <Route exact path="/" component={HomePage} />
-      <Route exact path="/jobs" component={Job} handleLogout={this.handleLogout}/>
+      {/* <Route exact path="/jobs" component={Job} user={this.state.auth} handleLogout={this.handleLogout}/> */}
+      <Route exact path="/jobs" render={ routerParams => <Job {...routerParams} handleLogin={this.handleLogin} user={this.state.auth}/> }/>
       {/* <Route exact path="/yourJobs" render={routerParams => <JobApplications {...routerParams} /> } /> */}
       <Route exact path="/newApplicant" component={ApplicantForm} />
       <Route exact path="/newEmployer" component={EmployerForm} />
@@ -57,7 +58,7 @@ class App extends React.Component {
       <Route exact path="/applicantLoginForm" render={ routerParams => <ApplicantLoginForm {...routerParams} handleLogin={this.handleLogin} /> } />
       <Route exact path="/employerLoginForm" render={ routerParams => <EmployerLoginForm {...routerParams} handleLogin={this.handleLogin}/> } />
       <Route exact path="/employerPage" render={ routerParams => < EmployerPage {...routerParams}/>}/>
-      <Route exact path="/searchResults" render={ routerParams => < SearchResults {...routerParams}/>}/>
+      <Route exact path="/searchResults"  render={ routerParams => < SearchResults {...routerParams} user={this.state.auth}/>}/>
     </div>
         </header>
       </div>
