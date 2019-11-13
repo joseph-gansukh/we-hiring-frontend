@@ -31,14 +31,15 @@ class SearchForm extends Component {
           <form onSubmit={this.handleSubmit}>
             <label>Job Search</label>
             <div className="form-inputs">
-            <select name="field" onChange={this.handleChange}>
+            <select className="dropdown" name="field" onChange={this.handleChange}>
               <option value="tech">Tech</option>
               <option value="legal">Legal</option>
+              <option value="legal">Healthcare</option>
             </select>
-            <label>Location</label>
-            <input type="text" name="location" onChange={this.handleChange}/>
-            <label>Pay</label>
-            <input type="text" name="pay"/>
+            <label>Location: </label>
+            <input className="search-location" type="text" name="location" onChange={this.handleChange}/>
+            {/* <label>Pay</label>
+            <input type="text" name="pay"/> */}
             
             </div>
             <input type="submit" value="Search"/>

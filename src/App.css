@@ -36,6 +36,18 @@
   margin-left: 50px 50px;
 }
 
+
+.dropdown {
+  margin: 2% 5% 3% 0%;
+  width: 20%
+}
+
+.search-location {
+  margin-left: 2%;
+  width: 30%;
+  color: grey
+}
+
 .card {
   width: 15rem;
   margin: 10px;

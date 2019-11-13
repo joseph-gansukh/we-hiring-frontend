@@ -7,8 +7,10 @@ class EmployerForm extends React.Component {
   
   state = {
     name:'',
+    password: '',
     field: '',
-    location: ''
+    location: '',
+    userType: 'employer'
   }
 
   handleChange = (e) => {
@@ -20,7 +22,7 @@ class EmployerForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const newEmployer = {name: this.state.name, field: this.state.field, location: this.state.location}
+    const newEmployer = {name: this.state.name, password: this.state.password, field: this.state.field, location: this.state.location, userType: this.state.userType}
 
     const reqObj = {
       method: "POST",
@@ -34,12 +36,15 @@ class EmployerForm extends React.Component {
 
     fetch(API, reqObj)
     .then(resp => resp.json())
-    .then(data => console.log(data))
+    .then(data => {
+      localStorage.setItem('token', data.jwt)
+    })
 
     this.setState({
-      name: '', 
+      name: '',
+      password: '', 
       field: '',
-      location: ''
+      location: '',
     })
   }
 
@@ -50,6 +55,8 @@ class EmployerForm extends React.Component {
         <h1>New Employer Form</h1>
         <Label>Employer Name</Label>
         <Input required type="text" name="name" id="name" onChange={this.handleChange} value={this.state.name}/>
+        <Label>Password</Label>
+        <Input required type="text" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
         <Label>Field</Label>
         <Input required type="text" name="field" id="field" onChange={this.handleChange} value={this.state.field}/>
         <Label>Location</Label>
