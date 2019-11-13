@@ -32,7 +32,7 @@ class ApplicantLoginForm extends Component {
       isLoggedIn: true,
       applicantUser: true
     })
-
+    this.props.handleLogin(data.banana)
     this.props.history.push({pathname: '/yourJobs', state: {applicant: this.state.applicant}})
   }
 
@@ -43,7 +43,6 @@ class ApplicantLoginForm extends Component {
   }
 
   render() {
-    console.log('Applicant LOGIN FORM STATE:::::', this.state)
     return(
       <div>
         <h1>Applicant Login page</h1>  
@@ -51,7 +50,7 @@ class ApplicantLoginForm extends Component {
         <Label>UserName</Label>
         <Input required type="text" name="name" id="name" onChange={this.handleChange}/>
         <Label>Password</Label>
-        <Input required type="text" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
+        <Input required type="password" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
       <Button>Submit</Button>
       </Form>
       <br></br>

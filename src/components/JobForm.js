@@ -5,17 +5,20 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class JobForm extends Component {
 
-  state = {
-    title: '',
-    field: '',
-    description: '',
-    employer_id: 1
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: '',
+      field: '',
+      description: '',
+      employer_id: ''
+    }
   }
 
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const newJob = {title: this.state.title, field: this.state.field, description: this.state.description, employer_id: 1}
+    const newJob = {title: this.state.title, field: this.state.field, description: this.state.description, employer_id: this.props.user.id}
     
     const reqObj = {
       method: "POST",
@@ -35,7 +38,7 @@ class JobForm extends Component {
       title: '', 
       field: '',
       description: '',
-      employer_id: 1
+      employer_id: ''
     })
 
     this.props.history.push('/jobs')
@@ -49,6 +52,7 @@ class JobForm extends Component {
   }
 
   render() {
+    console.log('Employer User in JobForm', this.props.user.id)
     return (
       <Form onSubmit={this.handleSubmit}>
         <Label>Job Title</Label>
