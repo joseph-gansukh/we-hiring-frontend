@@ -6,38 +6,16 @@ import HomePage from './components/HomePage'
 import Navbar from './components/Navbar'
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Job from './Job'
-import ApplicantForm from './components/Login-SignUp/ApplicantForm'
-import JobForm from './components/JobForm'
-import ApplicantLoginForm from './components/Login-SignUp/ApplicantLoginForm'
-import EmployerLoginForm from './components/Login-SignUp/EmployerLoginForm'
-import JobApplications from './components/JobApplications'
-import EmployerPage from './components/Login-SignUp/EmployerPage';
-import EmployerForm from './components/Login-SignUp/EmployerForm'
-import SearchResults from './components/SearchResults'
 
-// ReactDOM.render(<App />, document.getElementById('root'));
-
-const routing = (
-    <Router>
-      <div>
-        <Navbar/>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/jobs" component={Job} />
-        <Route exact path="/yourJobs" render={routerParams => <JobApplications {...routerParams} /> } />
-        <Route exact path="/newApplicant" component={ApplicantForm} />
-        <Route exact path="/newEmployer" component={EmployerForm} />
-        <Route exact path="/newJob" render={routerParams => <JobForm {...routerParams} /> }/>
-        <Route exact path="/applicantLoginForm" render={ routerParams => <ApplicantLoginForm {...routerParams} /> } />
-        <Route exact path="/employerLoginForm" render={ routerParams => <EmployerLoginForm {...routerParams} /> } />
-        <Route exact path="/employerPage" render={ routerParams => < EmployerPage {...routerParams}/>}/>
-        <Route exact path="/searchResults" render={ routerParams => < SearchResults {...routerParams}/>}/>
-      </div>
-    </Router>
-)
+import App from './App';
 
 
-ReactDOM.render(routing, document.getElementById('root'))
+ReactDOM.render(
+  <Router>
+    <App/>
+  </Router>,
+  document.getElementById('root')
+  )
 
 
 // If you want your app to work offline and load faster, you can change

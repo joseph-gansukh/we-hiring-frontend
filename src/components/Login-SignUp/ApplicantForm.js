@@ -9,7 +9,8 @@ class ApplicantForm extends Component {
     name: '',
     location: '',
     password: '',
-    userType: 'applicant'
+    userType: 'applicant',
+    loginStatus: "NOT_LOGGED_IN"
   }
 
 
@@ -44,8 +45,11 @@ class ApplicantForm extends Component {
     this.setState({
       name: '', 
       location: '',
-      password: ''
+      password: '',
+      loginStatus: "LOGGED_IN"
     })
+
+    this.props.history.push('/')
   }
 
   render() {
@@ -57,7 +61,7 @@ class ApplicantForm extends Component {
         <Label>Location</Label>
         <Input required type="text" name="location" id="location" onChange={this.handleChange} value={this.state.location}/>
         <Label>Password</Label>
-        <Input required type="text" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
+        <Input required type="password" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
       <Button>Submit</Button>
     </Form>
     )

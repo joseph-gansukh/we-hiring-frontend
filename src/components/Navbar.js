@@ -3,15 +3,21 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 
 
 export default class Navbar extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isLoggedIn: false
-    }
-  }
 
   render() {
-    console.log(this.state)
+    const { user } = this.props
+    let loginButtons;
+    if (user.id) {
+      loginButtons = <Link to="/" className="btn btn-outline-success my-2 my-sm-0" onClick={this.props.handleLogout} >Logout</Link>
+    } else {
+      loginButtons = (
+        <div className='btn'>
+          <Link to="/applicantLoginForm" className="btn btn-outline-success my-2 my-sm-0">Applicant Sign In</Link>
+          <Link to="/employerLoginForm" className="btn btn-outline-success my-2 my-sm-0">Employers Sign In</Link>
+        </div>
+      )
+    }
+
       return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="./">We Hirin'</a>
@@ -24,12 +30,15 @@ export default class Navbar extends Component {
           {/* currently hard coding isLoggedIn state. needs to pass from log in pages? */}
           {/* after figuring that out, conditionally render '/yourJobs' and post job for employers */}
           {/* Also needs double conditional that also checks if user is an applicant or an employer */}
-          { this.state.isLoggedIn && <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>}
+          {/* { this.state. && <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>} */}
           <Link to="/jobs" className="btn btn-outline-success my-2 my-sm-0">Jobs</Link>
           {/* <Link to="/yourJobs" className="btn btn-outline-success my-2 my-sm-0">Your Applications</Link> */}
           {/* <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link> */}
-          <Link to="/applicantLoginForm" className="btn btn-outline-success my-2 my-sm-0">Sign In</Link>
-          <Link to="/employerLoginForm" className="btn btn-outline-success my-2 my-sm-0">Employers / Post Job</Link>
+          
+            
+            {loginButtons}
+            <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>
+          
         </div>
       </nav>
     )

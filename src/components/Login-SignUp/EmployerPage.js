@@ -23,7 +23,6 @@ function EmployerPage(props) {
   })
   return(
     <div>
-    <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>
     <div className="ui cards" id="job-cards">
       <div className="card" id="job-card">
         <div className="content">

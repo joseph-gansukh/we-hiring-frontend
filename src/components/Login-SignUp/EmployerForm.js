@@ -56,7 +56,7 @@ class EmployerForm extends React.Component {
         <Label>Employer Name</Label>
         <Input required type="text" name="name" id="name" onChange={this.handleChange} value={this.state.name}/>
         <Label>Password</Label>
-        <Input required type="text" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
+        <Input required type="password" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
         <Label>Field</Label>
         <Input required type="text" name="field" id="field" onChange={this.handleChange} value={this.state.field}/>
         <Label>Location</Label>

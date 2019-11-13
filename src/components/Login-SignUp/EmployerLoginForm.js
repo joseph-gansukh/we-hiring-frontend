@@ -31,6 +31,7 @@ class EmployerLoginForm extends Component {
       employer: data.employer,
       isLoggedIn: true
     })
+    this.props.handleLogin(data.employer)
     this.props.history.push({pathname: '/employerPage', state: {employer: this.state.employer}})
   }
 
@@ -41,7 +42,6 @@ class EmployerLoginForm extends Component {
   }
 
   render() {
-    console.log('Employer login form state', this.state)
     return(
       <div>
         <h1>Employer Login page</h1>  
@@ -49,7 +49,7 @@ class EmployerLoginForm extends Component {
         <Label>Name</Label>
         <Input required type="text" name="name" id="name" onChange={this.handleChange}/>
         <Label>Password</Label>
-        <Input required type="text" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
+        <Input required type="password" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
         <Button>Submit</Button>
         </Form>
         <br></br>
