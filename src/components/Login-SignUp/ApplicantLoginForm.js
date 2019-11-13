@@ -35,14 +35,15 @@ class ApplicantLoginForm extends Component {
     this.props.handleLogin(data.banana)
     this.props.history.push({pathname: '/yourJobs', state: {applicant: this.state.applicant}})
   }
-
+  
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     })
   }
-
+  
   render() {
+    console.log("IS THIS BANANA GOT TYPE????????", this.state.applicant)
     return(
       <div>
         <h1>Applicant Login page</h1>  

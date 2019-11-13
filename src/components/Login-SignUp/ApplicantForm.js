@@ -9,7 +9,7 @@ class ApplicantForm extends Component {
     name: '',
     location: '',
     password: '',
-    userType: 'applicant',
+    usertype: 'applicant',
     loginStatus: "NOT_LOGGED_IN"
   }
 
@@ -23,7 +23,7 @@ class ApplicantForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const newApplicant = {name: this.state.name, location: this.state.location, password: this.state.password, userType: this.state.userType}
+    const newApplicant = {name: this.state.name, location: this.state.location, password: this.state.password, usertype: this.state.usertype}
     
     const reqObj = {
       method: "POST",

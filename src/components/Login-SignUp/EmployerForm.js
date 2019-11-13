@@ -10,7 +10,7 @@ class EmployerForm extends React.Component {
     password: '',
     field: '',
     location: '',
-    userType: 'employer'
+    usertype: 'employer'
   }
 
   handleChange = (e) => {
@@ -22,7 +22,7 @@ class EmployerForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const newEmployer = {name: this.state.name, password: this.state.password, field: this.state.field, location: this.state.location, userType: this.state.userType}
+    const newEmployer = {name: this.state.name, password: this.state.password, field: this.state.field, location: this.state.location, usertype: this.state.usertype}
 
     const reqObj = {
       method: "POST",
@@ -37,6 +37,7 @@ class EmployerForm extends React.Component {
     fetch(API, reqObj)
     .then(resp => resp.json())
     .then(data => {
+      console.log('data', data)
       localStorage.setItem('token', data.jwt)
     })
 

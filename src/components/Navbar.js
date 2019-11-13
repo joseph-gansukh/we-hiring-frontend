@@ -6,6 +6,7 @@ export default class Navbar extends Component {
 
   render() {
     const { user } = this.props
+    console.log("USER", user.usertype)
     let loginButtons;
     if (user.id) {
       loginButtons = <Link to="/" className="btn btn-outline-success my-2 my-sm-0" onClick={this.props.handleLogout} >Logout</Link>
@@ -18,6 +19,13 @@ export default class Navbar extends Component {
       )
     }
 
+    let userConditions;
+    if (user.usertype == 'employer') {
+      userConditions = <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>
+    } else if (user.usertype == 'applicant') {
+      userConditions = <Link to="/yourJobs" className="btn btn-outline-success my-2 my-sm-0">Your Applications</Link>
+    }
+
       return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="./">We Hirin'</a>
@@ -27,17 +35,9 @@ export default class Navbar extends Component {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto"/>
-          {/* currently hard coding isLoggedIn state. needs to pass from log in pages? */}
-          {/* after figuring that out, conditionally render '/yourJobs' and post job for employers */}
-          {/* Also needs double conditional that also checks if user is an applicant or an employer */}
-          {/* { this.state. && <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>} */}
-          <Link to="/jobs" className="btn btn-outline-success my-2 my-sm-0">Jobs</Link>
-          {/* <Link to="/yourJobs" className="btn btn-outline-success my-2 my-sm-0">Your Applications</Link> */}
-          {/* <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link> */}
-          
-            
+          <Link to="/jobs" className="btn btn-outline-success my-2 my-sm-0">Jobs</Link>        
+            {userConditions}
             {loginButtons}
-            <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>
           
         </div>
       </nav>
