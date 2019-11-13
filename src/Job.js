@@ -18,11 +18,11 @@ class Job extends Component {
   }
 
   render() {
-    console.log("this.state.jobs", this.state.jobs)
+    console.log("props in job.js", this.props)
 
     const jobs = this.state.jobs.map(job => {
       //sends props to JobsIndex
-      return <JobsIndex job={job} />
+      return <JobsIndex job={job} user={this.props.user}/>
 
     })
 
