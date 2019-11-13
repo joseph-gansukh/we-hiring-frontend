@@ -2,8 +2,6 @@ import React from 'react'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 
 function EmployerPage(props) {
-  console.log(props.location.state.employer)
-  // console.log("Applicants", props.location.state.employer.jobs[0].applicants[0].name)
   const employer = props.location.state.employer
   const jobs = employer.jobs.map(job => {
     const applicants = job.applicants.map(applicant => {

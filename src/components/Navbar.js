@@ -3,7 +3,15 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 
 
 export default class Navbar extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      isLoggedIn: false
+    }
+  }
+
   render() {
+    console.log(this.state)
       return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="./">We Hirin'</a>
@@ -12,36 +20,16 @@ export default class Navbar extends Component {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            {/* <li className="nav-item active">
-              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
-            </li> */}
-            {/* <li className="nav-item">
-              <a className="nav-link" href="#">Link</a>
-            </li> */}
-            {/* <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-            </a>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">Action</a>
-                <a className="dropdown-item" href="#">Another action</a>
-                <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li> */}
-            {/* <li className="nav-item">
-              <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li> */}
-          </ul>
-          {/* <form className="form-inline my-2 my-lg-0">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/> 
-        </form> */}
+          <ul className="navbar-nav mr-auto"/>
+          {/* currently hard coding isLoggedIn state. needs to pass from log in pages? */}
+          {/* after figuring that out, conditionally render '/yourJobs' and post job for employers */}
+          {/* Also needs double conditional that also checks if user is an applicant or an employer */}
+          { this.state.isLoggedIn && <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link>}
           <Link to="/jobs" className="btn btn-outline-success my-2 my-sm-0">Jobs</Link>
-          <Link to="/yourJobs" className="btn btn-outline-success my-2 my-sm-0">Your Applications</Link>
+          {/* <Link to="/yourJobs" className="btn btn-outline-success my-2 my-sm-0">Your Applications</Link> */}
+          {/* <Link to="/newJob" className="btn btn-outline-success my-2 my-sm-0">Post New Job</Link> */}
           <Link to="/applicantLoginForm" className="btn btn-outline-success my-2 my-sm-0">Sign In</Link>
           <Link to="/employerLoginForm" className="btn btn-outline-success my-2 my-sm-0">Employers / Post Job</Link>
-          {/* <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button> */}
         </div>
       </nav>
     )
