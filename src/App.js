@@ -42,6 +42,7 @@ class App extends React.Component {
   
   render() {
     console.log("STATE IN APP JS AFTER LOGOUT IS CALLED", this.state)
+    console.log("TYPE PLEASE BE RIGHT", this.state.auth)
     return (
       <div className="App">
         <header className="App-header">
