@@ -32,7 +32,7 @@ class JobForm extends Component {
 
     fetch('http://localhost:3000/jobs/', reqObj)
     .then(resp => resp.json())
-    .then(data => console.log('hi'))
+    // .then(data => console.log(''))
 
     this.setState({
       title: '', 
@@ -52,7 +52,6 @@ class JobForm extends Component {
   }
 
   render() {
-    console.log('Employer User in JobForm', this.props.user.id)
     return (
       <Form onSubmit={this.handleSubmit}>
         <Label>Job Title</Label>

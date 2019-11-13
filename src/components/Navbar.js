@@ -6,7 +6,6 @@ export default class Navbar extends Component {
 
   render() {
     const { user } = this.props
-    console.log("USER", user.usertype)
     let loginButtons;
     if (user.id) {
       loginButtons = <Link to="/" className="btn btn-outline-success my-2 my-sm-0" onClick={this.props.handleLogout} >Logout</Link>
