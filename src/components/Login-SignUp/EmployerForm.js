@@ -46,6 +46,7 @@ class EmployerForm extends React.Component {
       field: '',
       location: '',
     })
+    this.props.history.push('/')
   }
 
   

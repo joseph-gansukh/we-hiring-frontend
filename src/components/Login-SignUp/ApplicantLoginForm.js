@@ -11,7 +11,8 @@ class ApplicantLoginForm extends Component {
     isLoggedIn: false,
     applicant: {},
     applicantUser: false,
-    usertype: 'applicant'
+    usertype: 'applicant',
+    error: false
   }
 
   handleSubmit = async (e) => {
@@ -31,8 +32,19 @@ class ApplicantLoginForm extends Component {
       isLoggedIn: true,
       applicantUser: true
     })
-    this.props.handleLogin(data.banana)
-    this.props.history.push({pathname: '/yourJobs', state: {applicant: this.state.applicant}})
+    if(this.state.applicant) {
+      console.log('correct password')
+      this.props.handleLogin(data.banana)
+      this.props.history.push({pathname: '/yourJobs', state: {applicant: this.state.applicant}})
+    } else {
+      console.log('incorrect password')
+      this.setState({
+        applicant: {},
+        password: '',
+        error: true
+      })
+      this.props.history.push('/applicantLoginForm')
+    }
   }
   
   handleChange = (e) => {
@@ -42,13 +54,17 @@ class ApplicantLoginForm extends Component {
   }
   
   render() {
+
     return(
       <div>
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1 className="display-4">Applicant Login Page</h1>
           </div>
-        </div> 
+        </div>
+        {this.state.error ? 
+          <div className="alert alert-danger" role="alert">Incorrect username or password</div>
+         : null}
         <Form onSubmit={this.handleSubmit} className="login-form">
         <Label>Username</Label>
         <Input required type="text" name="name" id="name" onChange={this.handleChange}/>
