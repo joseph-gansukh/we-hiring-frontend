@@ -35,6 +35,10 @@ class SearchForm extends Component {
               <option value="tech">Tech</option>
               <option value="legal">Legal</option>
               <option value="legal">Healthcare</option>
+              <option value="sales">Sales</option>
+              <option value="food services">Food Services</option>
+              <option value="construction">Construction</option>
+              <option value="arts">Arts</option>
             </select>
             <label>Location: </label>
             <input className="search-location" type="text" name="location" onChange={this.handleChange}/>
