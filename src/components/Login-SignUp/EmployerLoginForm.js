@@ -11,7 +11,8 @@ class EmployerLoginForm extends Component {
     password: '',
     isLoggedIn: false,
     employer: {},
-    usertype: 'employer'
+    usertype: 'employer',
+    error: false
   }
 
   handleSubmit = async (e) => {
@@ -31,8 +32,18 @@ class EmployerLoginForm extends Component {
       employer: data.employer,
       isLoggedIn: true
     })
-    this.props.handleLogin(data.employer)
-    this.props.history.push({pathname: '/employerPage', state: {employer: this.state.employer}})
+    if(this.state.employer) {
+      this.props.handleLogin(data.employer)
+      this.props.history.push({pathname: '/employerPage', state: {employer: this.state.employer}})
+    } else {
+      console.log('incorrect password')
+      this.setState({
+        employer: {},
+        password: '',
+        error: true
+      })
+      this.props.history.push('/employerLoginForm')
+    }
   }
 
   handleChange = (e) => {
@@ -49,6 +60,9 @@ class EmployerLoginForm extends Component {
             <h1 className="display-4">Employer Login Page</h1>
           </div>
         </div> 
+        {this.state.error ? 
+          <div className="alert alert-danger" role="alert">Incorrect username or password</div>
+         : null}
         <Form onSubmit={this.handleSubmit} className="login-form">
         <Label>Company Name</Label>
         <Input required type="text" name="name" id="name" onChange={this.handleChange}/>
