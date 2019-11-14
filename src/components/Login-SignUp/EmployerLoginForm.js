@@ -44,16 +44,20 @@ class EmployerLoginForm extends Component {
   render() {
     return(
       <div>
-        <h1>Employer Login page</h1>  
-        <Form onSubmit={this.handleSubmit}>
-        <Label>Name</Label>
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container">
+            <h1 className="display-4">Employer Login Page</h1>
+          </div>
+        </div> 
+        <Form onSubmit={this.handleSubmit} className="login-form">
+        <Label>Company Name</Label>
         <Input required type="text" name="name" id="name" onChange={this.handleChange}/>
         <Label>Password</Label>
         <Input required type="password" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
         <Button>Submit</Button>
         </Form>
         <br></br>
-        <Link to="/newEmployer" className="btn btn-outline-success my-2 my-sm-0">New Employer</Link>
+        <Link to="/newEmployer" className="btn btn-outline-success my-2 my-sm-0">Sign up as a New Employer</Link>
       </div>
     )
   }

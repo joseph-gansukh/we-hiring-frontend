@@ -46,11 +46,11 @@ export default class JobsIndex extends Component {
                 <div className="ui cards" id="job-cards">
                     <div className="card" id="job-card">
                         <div className="content">
-                        <div className="header">Job Title: {this.props.job.title}</div>
-                        <div className="meta">Company: {this.props.job.employer.name}</div>
-                        <div className="meta"> Field: {this.props.job.field}</div>
-                        <div className="description">Job Description: {this.props.job.description}</div>
-                        <button  onClick={this.handleApply} data={this.state.data} className="btn btn-outline-success my-2 my-sm-0">Apply</button>
+                        <div className="card-title">Job Title: {this.props.job.title}</div>
+                        <div className="card-subtitle mb-2 text-muted">Company: {this.props.job.employer.name}</div>
+                        <div className="card-subtitle mb-2 text-muted"> Field: {this.props.job.field}</div>
+                        <div className="card-text">{this.props.job.description}</div>
+                        <Link to='/yourJobs' onClick={this.handleApply} className="btn btn-outline-success my-2 my-sm-0">Apply</Link>
                         </div>
                     </div>
                 </div>

@@ -44,16 +44,20 @@ class ApplicantLoginForm extends Component {
   render() {
     return(
       <div>
-        <h1>Applicant Login page</h1>  
-        <Form onSubmit={this.handleSubmit}>
-        <Label>UserName</Label>
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container">
+            <h1 className="display-4">Applicant Login Page</h1>
+          </div>
+        </div> 
+        <Form onSubmit={this.handleSubmit} className="login-form">
+        <Label>Username</Label>
         <Input required type="text" name="name" id="name" onChange={this.handleChange}/>
         <Label>Password</Label>
         <Input required type="password" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
       <Button>Submit</Button>
       </Form>
       <br></br>
-      <Link to="/newApplicant" className="btn btn-outline-success my-2 my-sm-0">New Applicant</Link>
+      <Link to="/newApplicant" className="btn btn-outline-success my-2 my-sm-0">Sign up as a New Applicant</Link>
       </div>
     )
   }

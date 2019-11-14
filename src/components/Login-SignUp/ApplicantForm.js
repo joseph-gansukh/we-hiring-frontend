@@ -53,16 +53,22 @@ class ApplicantForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <h1>New Applicant Form</h1>
-        <Label>Applicant Name</Label>
-        <Input required type="text" name="name" id="name" onChange={this.handleChange} value={this.state.name}/>
-        <Label>Location</Label>
-        <Input required type="text" name="location" id="location" onChange={this.handleChange} value={this.state.location}/>
-        <Label>Password</Label>
-        <Input required type="password" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
-      <Button>Submit</Button>
-    </Form>
+      <div>
+        <div className="jumbotron jumbotron-fluid">
+            <div className="container">
+              <h1 className="display-4">Create an Applicant Account</h1>
+            </div>
+          </div> 
+        <Form onSubmit={this.handleSubmit} className="login-form">
+          <Label>Applicant Name</Label>
+          <Input required type="text" name="name" id="name" onChange={this.handleChange} value={this.state.name}/>
+          <Label>Location</Label>
+          <Input required type="text" name="location" id="location" onChange={this.handleChange} value={this.state.location}/>
+          <Label>Password</Label>
+          <Input required type="password" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
+        <Button>Submit</Button>
+      </Form>
+    </div>
     )
   }
 }
