@@ -12,30 +12,35 @@ export default class JobsIndex extends Component {
 
     handleApply = (e) => {
         e.preventDefault()
-
-        const newApplication = {applicant_id: this.props.user.id, job_id: this.props.job.id, applicant_name: this.props.user.name}
-        const reqObj = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                applicant_id: newApplication.applicant_id,
-                job_id: newApplication.job_id
+        if (this.props.user.id) {
+            const newApplication = {applicant_id: this.props.user.id, job_id: this.props.job.id, applicant_name: this.props.user.name}
+            const reqObj = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    applicant_id: newApplication.applicant_id,
+                    job_id: newApplication.job_id
+                })
+            }
+    
+            fetch('http://localhost:3000/job_applicants', reqObj)
+            .then(resp => resp.json())
+            .then(data => {
+                console.log('index fetch data', data)
+                this.props.updateAuth(data)
+                // backend wired correctly
+                // cal a callback functin that updates App.js state (auth) so that jobs is a reflection of curent jobs array in BE
             })
+        } else {
+            this.props.routerParams.history.push('/applicantLoginForm')
         }
 
-        fetch('http://localhost:3000/job_applicants', reqObj)
-        .then(resp => resp.json())
-        .then(data => {
-            console.log('index fetch data', data)
-            this.props.updateAuth(data)
-            // backend wired correctly
-            // cal a callback functin that updates App.js state (auth) so that jobs is a reflection of curent jobs array in BE
-        })
     }
 
     render() {
+        console.log(this.props.props)
         return(
             <div>
                 <div className="ui cards" id="job-cards">
