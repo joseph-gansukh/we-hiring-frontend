@@ -10,10 +10,10 @@ const JobApplications = (props) => {
                 <div className="ui cards" id="job-cards">
                     <div className="card" id="job-card">
                         <div className="content">
-                            <div className="header">Job Title: {job.title} </div>
-                            <div className="meta">Company: {job.employer.name}</div>
-                            <div className="meta">Field: {job.field}</div>
-                            <div className="description">Job Description: {job.description} </div>
+                            <div className="card-title">Job Title: {job.title} </div>
+                            <div className="card-subtitle mb-2 text-muted">Company: {job.employer.name}</div>
+                            <div className="card-subtitle mb-2 text-muted">Field: {job.employer.field}</div>
+                            <div className="card-text">Job Description: {job.description} </div>
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,12 @@ const JobApplications = (props) => {
 
     return(
         <div>
-            <div className="applied-header"> Your Submitted Applications </div>
+            <div className="jumbotron jumbotron-fluid">
+                <div className="container">
+                <h1 className="display-4">Your Job Applications</h1>
+                <p className="lead">View all of the jobs you have applied for</p>
+                </div>
+            </div> 
             {applicantData}
         </div>    
     )

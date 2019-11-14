@@ -53,15 +53,23 @@ class JobForm extends Component {
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <Label>Job Title</Label>
-        <Input required type="text" name="title" id="title" onChange={this.handleChange} value={this.state.title}/>
-        <Label>Field</Label>
-        <Input required type="text" name="field" id="field" onChange={this.handleChange} value={this.state.field}/>
-        <Label>Description</Label>
-        <Input required type="text" name="description" id="description" onChange={this.handleChange} value={this.state.description}/>
-      <Button>Submit</Button>
-    </Form>
+      <div>
+        <div className="jumbotron jumbotron-fluid">
+            <div className="container">
+              <h1 className="display-4">Post a New Job</h1>
+              <p className="lead">Fill out the form below detailing the job title, field of employment, and a description for the position.</p>
+            </div>
+          </div> 
+        <Form onSubmit={this.handleSubmit} className="job-form">
+          <Label>Job Title</Label>
+          <Input required type="text" name="title" id="title" onChange={this.handleChange} value={this.state.title}/>
+          <Label>Field</Label>
+          <Input required type="text" name="field" id="field" onChange={this.handleChange} value={this.state.field}/>
+          <Label>Description</Label>
+          <Input required type="textarea" name="description" id="description" onChange={this.handleChange} value={this.state.description}/>
+        <Button>Submit</Button>
+      </Form>
+    </div>
     )
   }
 }

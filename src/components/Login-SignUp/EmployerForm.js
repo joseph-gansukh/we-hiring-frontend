@@ -51,18 +51,24 @@ class EmployerForm extends React.Component {
   
   render() {
     return(
-      <Form onSubmit={this.handleSubmit}>
-        <h1>New Employer Form</h1>
-        <Label>Employer Name</Label>
-        <Input required type="text" name="name" id="name" onChange={this.handleChange} value={this.state.name}/>
-        <Label>Password</Label>
-        <Input required type="password" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
-        <Label>Field</Label>
-        <Input required type="text" name="field" id="field" onChange={this.handleChange} value={this.state.field}/>
-        <Label>Location</Label>
-        <Input required type="text" name="location" id="location" onChange={this.handleChange} value={this.state.location}/>
-      <Button>Submit</Button>
-    </Form>
+      <div>
+        <div className="jumbotron jumbotron-fluid">
+            <div className="container">
+              <h1 className="display-4">Create an Employer Account</h1>
+            </div>
+          </div> 
+        <Form onSubmit={this.handleSubmit} className="login-form">
+          <Label>Employer Name</Label>
+          <Input required type="text" name="name" id="name" onChange={this.handleChange} value={this.state.name}/>
+          <Label>Password</Label>
+          <Input required type="password" name="password" id="password" onChange={this.handleChange} value={this.state.password}/>
+          <Label>Field</Label>
+          <Input required type="text" name="field" id="field" onChange={this.handleChange} value={this.state.field}/>
+          <Label>Location</Label>
+          <Input required type="text" name="location" id="location" onChange={this.handleChange} value={this.state.location}/>
+        <Button>Submit</Button>
+      </Form>
+    </div>
     )
   }
 

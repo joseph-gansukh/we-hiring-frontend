@@ -26,6 +26,10 @@
   padding: 2%;
 }
 
+.search-label {
+  font-size: 1.2rem;
+}
+
 .info-section {
   display: flex;
   flex-direction: row;
@@ -64,7 +68,16 @@
 }
 
 #job-card {
-  width: 80vw;
+  width: 70vw;
+  background-color: whitesmoke;
+  text-align: left;
+  padding: 1%
+}
+
+#job-card .btn {
+  display: block;
+  width: 25%;
+  margin: 2% auto;
 }
 
 /* Applicant Jobs Page */
@@ -77,4 +90,39 @@
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
   font-size: 2rem
+}
+
+.jumbotron {
+  padding: 0
+}
+
+.jumbotron container {
+  height: 25vh;
+  padding: 5%
+}
+
+/* Job Form */
+
+.job-form {
+  width: 60vw;
+  margin: 0 auto
+}
+
+.job-form input {
+  margin-bottom: 2%
+}
+
+.job-form button {
+  margin: 2%
+}
+
+/* Login Pages for both employers and applicants */
+
+.login-form {
+  width: 50vw;
+  margin: 0 auto
+}
+
+.login-form input {
+  margin-bottom: 2%
 }

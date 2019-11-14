@@ -27,6 +27,12 @@ class Job extends Component {
 
     return (
       <div className='jobs-container'>
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container">
+            <h1 className="display-4">Posted Jobs</h1>
+            <p className="lead">View posted jobs below - login to apply and view positions you have applied for.</p>
+          </div>
+        </div>        
         {jobs}
       </div>
     )

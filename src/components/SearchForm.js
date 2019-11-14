@@ -29,7 +29,7 @@ class SearchForm extends Component {
       <div className="search-form">
         <div className="search-items">
           <form onSubmit={this.handleSubmit}>
-            <label>Job Search</label>
+            <label className="search-label">Search for a Job</label>
             <div className="form-inputs">
             <select className="dropdown" name="field" onChange={this.handleChange}>
               <option value="tech">Tech</option>
