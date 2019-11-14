@@ -24,7 +24,7 @@ class HomePage extends Component {
   handleSearch = (filter) => {
     const allJobs = this.state.jobs.slice()
     const filteredJobs = allJobs.filter(job => {
-      return job.employer.location.toLowerCase() === filter.location.toLowerCase()
+      return ((job.employer.location.toLowerCase() === filter.location.toLowerCase()) && (job.field.toLowerCase() === filter.field.toLowerCase()))
     })
   
     this.props.history.push({pathname: '/searchResults', state: {filteredJobs: filteredJobs}})
